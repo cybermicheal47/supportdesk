@@ -29,7 +29,6 @@ salt = await bcrypt.genSalt(10)
 const hashedpassword = await bcrypt.hash(password, salt)
 
 
-
 //Create User
  const user = await User.create({
     name,
