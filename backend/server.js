@@ -10,6 +10,8 @@ connectDB()
 const app = express() 
 
 const { errorHandler } = require('./middleware/errormiddleware');
+const cors = require('cors');
+app.use(cors());
 
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
@@ -17,6 +19,8 @@ app.use(express.urlencoded({extended: false}))
 app.get('/',(req,res)=>{
     res.json('Welcome to support desk')
 })
+
+
 
 //ROUTES
 app.use('/api/users', require('./routes/userRoutes'))
